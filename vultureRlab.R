@@ -2,7 +2,7 @@ library(ggplot2)
 library(tidyr)
 
 # Load the dataframe
-camvult <- read.csv("cambodian-vultures.csv")
+camvult <- read.csv(url("https://github.com/Peternbrown/ES319/raw/master/cambodian-vultures.csv"))
 
 # Widen the margins of the boxplot
 par(mar = c(5, 8, 5, 5))
@@ -27,7 +27,6 @@ ggplot(camvultlong, aes(x = Year, y = Number_Spotted, ylab = "Number Recorded", 
         geom_bar(stat = "identity", position = "dodge", fill = "white") +
         labs(y = "Number Recorded", colour = "Type Recorded") +
         ggtitle("Reported Red-headed and White-rumped vulture nests and fledged individuals by Year")
-
 
 # What this code accomplishes:
 # First I recreated a data table from Clements et al. 2012,
